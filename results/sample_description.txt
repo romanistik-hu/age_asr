@@ -1,0 +1,12 @@
+COSER test: 1494 informant utterances, 28 recordings, 41 speakers, 27 locations, 5 provinces (Vizcaya, Zamora, Zaragoza, Álava, Ávila)
+  utterances per speaker: mean 36.4, range 1-115; Male: 18 speakers, mean 28.0; Female: 23 speakers, mean 43.0
+  age range 51-90; 86+: 3 speakers (87, 88, 90), sexes ['Female']
+  recordings with more than one informant: 12
+  segment duration: median 11.5 s, range 5.0-29.9 s, 5.48 h; NISQA median 2.07
+CoACan test: 704 utterances; individual 256, dyadic 448 (from 301 dyadic messages)
+  individual: 191 voice messages by 68 speakers; utterances per message 1.34 (range 1-5), per speaker 3.76 (range 1-13)
+  sex (utterances): {'Female': 161, 'Male': 94, 'Other': 1}; age range 19-70, median 21
+  26+ tail: 26 utterances, 21 voice messages, 7 speakers
+  sex 'Other': 1 utterance(s), message(s) ['IND_0237']; without it: 255 utterances, 190 messages, 67 speakers
+  segment duration (individual): median 5.8 s, range 0.7-28.4 s; all 704: median 5.3 s, range 0.1-28.4 s, 1.15 h
+  NISQA median: individual 2.78, all 704 2.96

@@ -1,0 +1,17 @@
+sample,n,condition,micro_wer,ci_low,ci_high,relative_change_pct
+COSER,1494,Whisper baseline,31.58,30.27,33.08,
+COSER,1494,Qwen3 baseline,30.33,29.52,31.18,
+COSER,1494,Whisper LoRA,30.43,28.04,32.87,-3.7
+COSER,1494,Qwen3 LoRA,31.27,29.69,32.82,3.1
+"CoACan (255, female or male)",255,Whisper baseline,10.17,8.89,11.49,
+"CoACan (255, female or male)",255,Qwen3 baseline,9.33,8.18,10.49,
+"CoACan (255, female or male)",255,Whisper LoRA,6.2,5.27,7.13,-39.0
+"CoACan (255, female or male)",255,Qwen3 LoRA,7.73,6.64,8.8,-17.1
+CoACan (256 individual),256,Whisper baseline,10.16,8.96,11.46,
+CoACan (256 individual),256,Qwen3 baseline,9.32,8.16,10.65,
+CoACan (256 individual),256,Whisper LoRA,6.18,5.33,7.08,-39.1
+CoACan (256 individual),256,Qwen3 LoRA,7.7,6.59,8.86,-17.3
+"CoACan (704, full test split)",704,Whisper baseline,10.68,9.78,11.58,
+"CoACan (704, full test split)",704,Qwen3 baseline,10.65,9.88,11.5,
+"CoACan (704, full test split)",704,Whisper LoRA,6.74,6.07,7.45,-36.8
+"CoACan (704, full test split)",704,Qwen3 LoRA,8.63,7.85,9.47,-19.0

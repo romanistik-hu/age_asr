@@ -1,0 +1,5 @@
+condition,groups,n,sex_male_b,sex_male_se,sex_male_p,age_b,age_p,icc
+Whisper baseline,68,256,2.0221,2.189,0.3556,0.1221,0.4147,0.137
+Qwen3 baseline,68,256,4.506,2.1597,0.0369,0.139,0.3464,0.048
+Whisper LoRA,68,256,2.4092,1.632,0.1399,0.0431,0.7049,0.0
+Qwen3 LoRA,68,256,2.6583,1.7961,0.1389,0.1036,0.4064,0.0

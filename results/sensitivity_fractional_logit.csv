@@ -1,0 +1,9 @@
+corpus,condition,n,sex_male_logit,sex_male_p,age_logit,age_p
+COSER,Whisper baseline,1494,0.4557,0.0004,0.0049,0.3067
+COSER,Qwen3 baseline,1494,0.4366,0.0003,0.0047,0.3015
+COSER,Whisper LoRA,1494,0.3543,0.0048,0.0089,0.0362
+COSER,Qwen3 LoRA,1494,0.4043,0.0074,0.0051,0.1829
+CoACan,Whisper baseline,256,0.2537,0.138,0.0129,0.0241
+CoACan,Qwen3 baseline,256,0.4833,0.0106,0.0138,0.0451
+CoACan,Whisper LoRA,256,0.3183,0.1041,0.0028,0.8505
+CoACan,Qwen3 LoRA,256,0.3029,0.124,0.0118,0.1185

@@ -1,0 +1,11 @@
+corpus,unit,band,condition,n,pct_female,mean_wer
+COSER,speaker,50-70,whisper_base,14,71,36.1
+COSER,speaker,71-85,whisper_base,24,42,38.3
+COSER,speaker,86+,whisper_base,3,100,36.6
+CoACan,voice message,18-25,whisper_base,170,59,11.0
+CoACan,voice message,26+,whisper_base,21,76,12.0
+COSER,speaker,50-70,qwen3_base,14,71,34.8
+COSER,speaker,71-85,qwen3_base,24,42,36.1
+COSER,speaker,86+,qwen3_base,3,100,36.2
+CoACan,voice message,18-25,qwen3_base,170,59,11.0
+CoACan,voice message,26+,qwen3_base,21,76,11.6

@@ -1,0 +1,9 @@
+corpus,condition,lmm_b,lmm_p,ols_cr_b,ols_cr_p
+COSER,Whisper baseline,6.3215,0.0447,10.0421,0.0004
+COSER,Qwen3 baseline,6.3726,0.0187,9.5382,0.0003
+COSER,Whisper LoRA,2.9153,0.3504,7.0845,0.0059
+COSER,Qwen3 LoRA,6.877,0.0628,8.8488,0.0104
+CoACan,Whisper baseline,2.5392,0.1518,2.5928,0.1344
+CoACan,Qwen3 baseline,5.0772,0.0087,5.0573,0.0094
+CoACan,Whisper LoRA,2.4092,0.118,2.4092,0.095
+CoACan,Qwen3 LoRA,2.6583,0.121,2.6583,0.1234

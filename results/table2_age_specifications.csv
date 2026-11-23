@@ -1,0 +1,17 @@
+condition,specification,loglik,aic,delta_aic_vs_linear
+Whisper baseline,Linear,-6348.658,12713.317,0.0
+Whisper baseline,Quadratic,-6348.455,12714.909,1.593
+Whisper baseline,Decadal buckets,-6347.752,12717.504,4.187
+Whisper baseline,Three-level grouping,-6348.18,12714.359,1.043
+Qwen3 baseline,Linear,-6263.288,12542.577,0.0
+Qwen3 baseline,Quadratic,-6263.288,12544.575,1.998
+Qwen3 baseline,Decadal buckets,-6260.911,12543.823,1.246
+Qwen3 baseline,Three-level grouping,-6262.2,12542.401,-0.176
+Whisper LoRA,Linear,-6593.991,13203.981,0.0
+Whisper LoRA,Quadratic,-6593.91,13205.819,1.838
+Whisper LoRA,Decadal buckets,-6592.171,13206.342,2.36
+Whisper LoRA,Three-level grouping,-6594.178,13206.357,2.376
+Qwen3 LoRA,Linear,-6914.597,13845.194,0.0
+Qwen3 LoRA,Quadratic,-6914.556,13847.111,1.917
+Qwen3 LoRA,Decadal buckets,-6912.977,13847.954,2.76
+Qwen3 LoRA,Three-level grouping,-6914.556,13847.111,1.918

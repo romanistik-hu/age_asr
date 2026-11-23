@@ -1,0 +1,223 @@
+
+######## 01_corpus_wer.py
+                       sample    n        condition  micro_wer  ci_low  ci_high  relative_change_pct
+                        COSER 1494 Whisper baseline      31.58   30.27    33.08                  NaN
+                        COSER 1494   Qwen3 baseline      30.33   29.52    31.18                  NaN
+                        COSER 1494     Whisper LoRA      30.43   28.04    32.87                 -3.7
+                        COSER 1494       Qwen3 LoRA      31.27   29.69    32.82                  3.1
+ CoACan (255, female or male)  255 Whisper baseline      10.17    8.89    11.49                  NaN
+ CoACan (255, female or male)  255   Qwen3 baseline       9.33    8.18    10.49                  NaN
+ CoACan (255, female or male)  255     Whisper LoRA       6.20    5.27     7.13                -39.0
+ CoACan (255, female or male)  255       Qwen3 LoRA       7.73    6.64     8.80                -17.1
+      CoACan (256 individual)  256 Whisper baseline      10.16    8.96    11.46                  NaN
+      CoACan (256 individual)  256   Qwen3 baseline       9.32    8.16    10.65                  NaN
+      CoACan (256 individual)  256     Whisper LoRA       6.18    5.33     7.08                -39.1
+      CoACan (256 individual)  256       Qwen3 LoRA       7.70    6.59     8.86                -17.3
+CoACan (704, full test split)  704 Whisper baseline      10.68    9.78    11.58                  NaN
+CoACan (704, full test split)  704   Qwen3 baseline      10.65    9.88    11.50                  NaN
+CoACan (704, full test split)  704     Whisper LoRA       6.74    6.07     7.45                -36.8
+CoACan (704, full test split)  704       Qwen3 LoRA       8.63    7.85     9.47                -19.0
+
+######## 02_mixed_models.py
+corpus        condition    n  groups  sex_male_b  sex_male_p  age_per_year_b  age_per_year_p   icc
+ COSER Whisper baseline 1494      41       6.322       0.045           0.047           0.763 0.215
+ COSER   Qwen3 baseline 1494      41       6.373       0.019           0.066           0.622 0.178
+ COSER     Whisper LoRA 1494      41       2.915       0.350           0.104           0.494 0.149
+ COSER       Qwen3 LoRA 1494      41       6.877       0.063           0.080           0.658 0.136
+CoACan Whisper baseline  256     191       2.539       0.152           0.127           0.314 0.071
+CoACan   Qwen3 baseline  256     191       5.077       0.009           0.152           0.271 0.061
+CoACan     Whisper LoRA  256     191       2.409       0.118           0.043           0.700 0.000
+CoACan       Qwen3 LoRA  256     191       2.658       0.121           0.104           0.406 0.000
+
+######## 03_age_specifications.py
+condition             Qwen3 LoRA  Qwen3 baseline  Whisper LoRA  Whisper baseline
+specification                                                                   
+Decadal buckets             2.76            1.25          2.36              4.19
+Linear                      0.00            0.00          0.00              0.00
+Quadratic                   1.92            2.00          1.84              1.59
+Three-level grouping        1.92           -0.18          2.38              1.04
+Whisper baseline: max LR at 80-88 = 1.74; best threshold 70 (LR 4.93, step -11.55); LR at 71 = 0.74
+Qwen3 baseline: max LR at 80-88 = 1.46; best threshold 70 (LR 9.96, step -13.59); LR at 71 = 1.64
+Whisper LoRA: max LR at 80-88 = 0.26; best threshold 70 (LR 8.25, step -14.06); LR at 71 = 1.03
+Qwen3 LoRA: max LR at 80-88 = 0.60; best threshold 70 (LR 5.20, step -13.38); LR at 71 = 1.27
+
+######## 04_sensitivity.py
+--- cap200
+corpus        condition    n  sex_male_b  sex_male_p   age_b  age_p
+ COSER Whisper baseline 1494      7.5575      0.0319 -0.0073 0.9665
+ COSER   Qwen3 baseline 1494      7.0593      0.0138  0.0010 0.9945
+ COSER     Whisper LoRA 1494      3.1710      0.4051  0.1194 0.5122
+ COSER       Qwen3 LoRA 1494      7.5499      0.0529  0.0556 0.7708
+CoACan Whisper baseline  256      1.9096      0.4179  0.1015 0.5303
+CoACan   Qwen3 baseline  256      5.0772      0.0087  0.1523 0.2709
+CoACan     Whisper LoRA  256      1.9328      0.3754  0.0212 0.8881
+CoACan       Qwen3 LoRA  256      2.1752      0.3300  0.0875 0.5819
+--- log_age
+corpus        condition    n  sex_male_b  sex_male_p  log_age_b  log_age_p
+ COSER Whisper baseline 1494      6.2573      0.0480     3.9008     0.7184
+ COSER   Qwen3 baseline 1494      6.3252      0.0203     4.6799     0.6141
+ COSER     Whisper LoRA 1494      2.8283      0.3672     7.6328     0.4708
+ COSER       Qwen3 LoRA 1494      6.8024      0.0672     5.9678     0.6354
+CoACan Whisper baseline  256      2.5965      0.1420     5.4725     0.2307
+CoACan   Qwen3 baseline  256      5.1013      0.0084     5.6511     0.2584
+CoACan     Whisper LoRA  256      2.3906      0.1212     1.0058     0.8030
+CoACan       Qwen3 LoRA  256      2.6528      0.1222     3.3700     0.4520
+--- fractional_logit
+corpus        condition    n  sex_male_logit  sex_male_p  age_logit  age_p
+ COSER Whisper baseline 1494          0.4557      0.0004     0.0049 0.3067
+ COSER   Qwen3 baseline 1494          0.4366      0.0003     0.0047 0.3015
+ COSER     Whisper LoRA 1494          0.3543      0.0048     0.0089 0.0362
+ COSER       Qwen3 LoRA 1494          0.4043      0.0074     0.0051 0.1829
+CoACan Whisper baseline  256          0.2537      0.1380     0.0129 0.0241
+CoACan   Qwen3 baseline  256          0.4833      0.0106     0.0138 0.0451
+CoACan     Whisper LoRA  256          0.3183      0.1041     0.0028 0.8505
+CoACan       Qwen3 LoRA  256          0.3029      0.1240     0.0118 0.1185
+
+######## 05_descriptives.py
+COSER test: 1494 informant utterances, 28 recordings, 41 speakers, 27 locations, 5 provinces (Vizcaya, Zamora, Zaragoza, �lava, �vila)
+  utterances per speaker: mean 36.4, range 1-115; Male: 18 speakers, mean 28.0; Female: 23 speakers, mean 43.0
+  age range 51-90; 86+: 3 speakers (87, 88, 90), sexes ['Female']
+  recordings with more than one informant: 12
+  segment duration: median 11.5 s, range 5.0-29.9 s, 5.48 h; NISQA median 2.07
+CoACan test: 704 utterances; individual 256, dyadic 448 (from 301 dyadic messages)
+  individual: 191 voice messages by 68 speakers; utterances per message 1.34 (range 1-5), per speaker 3.76 (range 1-13)
+  sex (utterances): {'Female': 161, 'Male': 94, 'Other': 1}; age range 19-70, median 21
+  26+ tail: 26 utterances, 21 voice messages, 7 speakers
+  sex 'Other': 1 utterance(s), message(s) ['IND_0237']; without it: 255 utterances, 190 messages, 67 speakers
+  segment duration (individual): median 5.8 s, range 0.7-28.4 s; all 704: median 5.3 s, range 0.1-28.4 s, 1.15 h
+  NISQA median: individual 2.78, all 704 2.96
+
+######## 06_figures.py
+corpus             cond  sex  sex_lo  sex_hi  age  age_lo  age_hi
+ COSER Whisper baseline 6.32    0.15   12.49 0.47   -2.58    3.51
+ COSER   Qwen3 baseline 6.37    1.06   11.69 0.66   -1.95    3.27
+ COSER     Whisper LoRA 2.92   -3.20    9.03 1.04   -1.94    4.02
+ COSER       Qwen3 LoRA 6.88   -0.37   14.12 0.80   -2.74    4.35
+CoACan Whisper baseline 2.54   -0.93    6.01 1.27   -1.21    3.75
+CoACan   Qwen3 baseline 5.08    1.29    8.87 1.52   -1.19    4.23
+CoACan     Whisper LoRA 2.41   -0.61    5.43 0.43   -1.76    2.63
+CoACan       Qwen3 LoRA 2.66   -0.70    6.02 1.04   -1.41    3.48
+
+######## 07_paired_bootstrap.py
+corpus cond  n_utt  whisper  qwen3  delta_q_minus_w  ci_lo  ci_hi  p_two_sided
+ COSER base   1494    31.58  30.33            -1.26  -2.58  -0.24        0.018
+ COSER lora   1494    30.43  31.27             0.84  -1.49   3.11        0.456
+CoACan base    255    10.17   9.33            -0.84  -2.06   0.28        0.168
+CoACan lora    255     6.20   7.73             1.53   0.62   2.42        0.000
+
+######## 08_coacan_speaker_intercept.py
+       condition  groups   n  sex_male_b  sex_male_se  sex_male_p  age_b  age_p   icc
+Whisper baseline      68 256      2.0221       2.1890      0.3556 0.1221 0.4147 0.137
+  Qwen3 baseline      68 256      4.5060       2.1597      0.0369 0.1390 0.3464 0.048
+    Whisper LoRA      68 256      2.4092       1.6320      0.1399 0.0431 0.7049 0.000
+      Qwen3 LoRA      68 256      2.6583       1.7961      0.1389 0.1036 0.4064 0.000
+ok   Table 4 COSER Whisper baseline WER: 31.5800 (paper 31.58)
+ok   Table 4 COSER Whisper baseline CI low: 30.2700 (paper 30.27)
+ok   Table 4 COSER Whisper baseline CI high: 33.0800 (paper 33.08)
+ok   Table 4 COSER Qwen3 baseline WER: 30.3300 (paper 30.33)
+ok   Table 4 COSER Qwen3 baseline CI low: 29.5200 (paper 29.52)
+ok   Table 4 COSER Qwen3 baseline CI high: 31.1800 (paper 31.18)
+ok   Table 4 COSER Whisper LoRA WER: 30.4300 (paper 30.43)
+ok   Table 4 COSER Whisper LoRA CI low: 28.0400 (paper 28.04)
+ok   Table 4 COSER Whisper LoRA CI high: 32.8700 (paper 32.87)
+ok   Table 4 COSER Qwen3 LoRA WER: 31.2700 (paper 31.27)
+ok   Table 4 COSER Qwen3 LoRA CI low: 29.6900 (paper 29.69)
+ok   Table 4 COSER Qwen3 LoRA CI high: 32.8200 (paper 32.82)
+ok   Table 4 CoACan Whisper baseline WER: 10.1700 (paper 10.17)
+ok   Table 4 CoACan Whisper baseline CI low: 8.8900 (paper 8.89)
+ok   Table 4 CoACan Whisper baseline CI high: 11.4900 (paper 11.49)
+ok   Table 4 CoACan Qwen3 baseline WER: 9.3300 (paper 9.33)
+ok   Table 4 CoACan Qwen3 baseline CI low: 8.1800 (paper 8.18)
+ok   Table 4 CoACan Qwen3 baseline CI high: 10.4900 (paper 10.49)
+ok   Table 4 CoACan Whisper LoRA WER: 6.2000 (paper 6.2)
+ok   Table 4 CoACan Whisper LoRA CI low: 5.2700 (paper 5.27)
+ok   Table 4 CoACan Whisper LoRA CI high: 7.1300 (paper 7.13)
+ok   Table 4 CoACan Qwen3 LoRA WER: 7.7300 (paper 7.73)
+ok   Table 4 CoACan Qwen3 LoRA CI low: 6.6400 (paper 6.64)
+ok   Table 4 CoACan Qwen3 LoRA CI high: 8.8000 (paper 8.8)
+ok   Table 5 COSER Whisper baseline sex b: 6.3215 (paper 6.32)
+ok   Table 5 COSER Whisper baseline sex p: 0.0447 (paper 0.045)
+ok   Table 5 COSER Whisper baseline age b: 0.0468 (paper 0.047)
+ok   Table 5 COSER Whisper baseline age p: 0.7631 (paper 0.763)
+ok   Table 5 COSER Qwen3 baseline sex b: 6.3726 (paper 6.37)
+ok   Table 5 COSER Qwen3 baseline sex p: 0.0187 (paper 0.019)
+ok   Table 5 COSER Qwen3 baseline age b: 0.0656 (paper 0.066)
+ok   Table 5 COSER Qwen3 baseline age p: 0.6224 (paper 0.622)
+ok   Table 5 COSER Whisper LoRA sex b: 2.9153 (paper 2.92)
+ok   Table 5 COSER Whisper LoRA sex p: 0.3504 (paper 0.35)
+ok   Table 5 COSER Whisper LoRA age b: 0.1039 (paper 0.104)
+ok   Table 5 COSER Whisper LoRA age p: 0.4945 (paper 0.494)
+ok   Table 5 COSER Qwen3 LoRA sex b: 6.8770 (paper 6.88)
+ok   Table 5 COSER Qwen3 LoRA sex p: 0.0628 (paper 0.063)
+ok   Table 5 COSER Qwen3 LoRA age b: 0.0801 (paper 0.08)
+ok   Table 5 COSER Qwen3 LoRA age p: 0.6580 (paper 0.658)
+ok   Table 5 CoACan Whisper baseline sex b: 2.5392 (paper 2.54)
+ok   Table 5 CoACan Whisper baseline sex p: 0.1518 (paper 0.152)
+ok   Table 5 CoACan Whisper baseline age b: 0.1271 (paper 0.127)
+ok   Table 5 CoACan Whisper baseline age p: 0.3144 (paper 0.314)
+ok   Table 5 CoACan Qwen3 baseline sex b: 5.0772 (paper 5.08)
+ok   Table 5 CoACan Qwen3 baseline sex p: 0.0087 (paper 0.009)
+ok   Table 5 CoACan Qwen3 baseline age b: 0.1523 (paper 0.152)
+ok   Table 5 CoACan Qwen3 baseline age p: 0.2709 (paper 0.271)
+ok   Table 5 CoACan Whisper LoRA sex b: 2.4092 (paper 2.41)
+ok   Table 5 CoACan Whisper LoRA sex p: 0.1180 (paper 0.118)
+ok   Table 5 CoACan Whisper LoRA age b: 0.0431 (paper 0.043)
+ok   Table 5 CoACan Whisper LoRA age p: 0.7004 (paper 0.7)
+ok   Table 5 CoACan Qwen3 LoRA sex b: 2.6583 (paper 2.66)
+ok   Table 5 CoACan Qwen3 LoRA sex p: 0.1210 (paper 0.121)
+ok   Table 5 CoACan Qwen3 LoRA age b: 0.1036 (paper 0.104)
+ok   Table 5 CoACan Qwen3 LoRA age p: 0.4056 (paper 0.406)
+ok   Table 6 COSER Whisper baseline OLS b: 10.0421 (paper 10.04)
+ok   Table 6 COSER Qwen3 baseline OLS b: 9.5382 (paper 9.54)
+ok   Table 6 COSER Whisper LoRA OLS b: 7.0845 (paper 7.08)
+ok   Table 6 COSER Qwen3 LoRA OLS b: 8.8488 (paper 8.85)
+ok   Table 6 CoACan Whisper baseline OLS b: 2.5928 (paper 2.59)
+ok   Table 6 CoACan Qwen3 baseline OLS b: 5.0573 (paper 5.06)
+ok   Table 6 CoACan Whisper LoRA OLS b: 2.4092 (paper 2.41)
+ok   Table 6 CoACan Qwen3 LoRA OLS b: 2.6583 (paper 2.66)
+ok   Table 2 Quadratic Whisper baseline: 1.5930 (paper 1.59)
+ok   Table 2 Quadratic Whisper LoRA: 1.8380 (paper 1.84)
+ok   Table 2 Quadratic Qwen3 baseline: 1.9980 (paper 2.0)
+ok   Table 2 Quadratic Qwen3 LoRA: 1.9170 (paper 1.92)
+ok   Table 2 Decadal buckets Whisper baseline: 4.1870 (paper 4.19)
+ok   Table 2 Decadal buckets Whisper LoRA: 2.3600 (paper 2.36)
+ok   Table 2 Decadal buckets Qwen3 baseline: 1.2460 (paper 1.25)
+ok   Table 2 Decadal buckets Qwen3 LoRA: 2.7600 (paper 2.76)
+ok   Table 2 Three-level grouping Whisper baseline: 1.0430 (paper 1.04)
+ok   Table 2 Three-level grouping Whisper LoRA: 2.3760 (paper 2.38)
+ok   Table 2 Three-level grouping Qwen3 baseline: -0.1760 (paper -0.18)
+ok   Table 2 Three-level grouping Qwen3 LoRA: 1.9180 (paper 1.92)
+ok   Table 7 COSER 50-70 whisper_base: 36.1000 (paper 36.1)
+ok   Table 7 COSER 71-85 whisper_base: 38.3000 (paper 38.3)
+ok   Table 7 COSER 86+ whisper_base: 36.6000 (paper 36.6)
+ok   Table 7 COSER 50-70 qwen3_base: 34.8000 (paper 34.8)
+ok   Table 7 COSER 71-85 qwen3_base: 36.1000 (paper 36.1)
+ok   Table 7 COSER 86+ qwen3_base: 36.2000 (paper 36.2)
+ok   Table 7 CoACan 18-25 whisper_base: 11.0000 (paper 11.0)
+ok   Table 7 CoACan 26+ whisper_base: 12.0000 (paper 12.0)
+ok   Table 7 CoACan 18-25 qwen3_base: 11.0000 (paper 11.0)
+ok   Table 7 CoACan 26+ qwen3_base: 11.6000 (paper 11.6)
+ok   Paired bootstrap COSER base delta: -1.2600 (paper -1.26)
+ok   Paired bootstrap COSER base CI lo: -2.5800 (paper -2.58)
+ok   Paired bootstrap COSER base CI hi: -0.2400 (paper -0.24)
+ok   Paired bootstrap COSER base p: 0.0180 (paper 0.018)
+ok   Paired bootstrap CoACan base delta: -0.8400 (paper -0.84)
+ok   Paired bootstrap CoACan base CI lo: -2.0600 (paper -2.06)
+ok   Paired bootstrap CoACan base CI hi: 0.2800 (paper 0.28)
+ok   Paired bootstrap CoACan base p: 0.1680 (paper 0.17)
+ok   Paired bootstrap COSER lora delta: 0.8400 (paper 0.84)
+ok   Paired bootstrap COSER lora CI lo: -1.4900 (paper -1.49)
+ok   Paired bootstrap COSER lora CI hi: 3.1100 (paper 3.11)
+ok   Paired bootstrap COSER lora p: 0.4560 (paper 0.46)
+ok   Paired bootstrap CoACan lora delta: 1.5300 (paper 1.53)
+ok   Paired bootstrap CoACan lora CI lo: 0.6200 (paper 0.62)
+ok   Paired bootstrap CoACan lora CI hi: 2.4200 (paper 2.42)
+ok   Paired bootstrap CoACan lora p: 0.0010 (paper 0.001)
+ok   CoACan speaker intercept Qwen3 baseline sex b: 4.5060 (paper 4.51)
+ok   CoACan speaker intercept Qwen3 baseline sex p: 0.0369 (paper 0.037)
+ok   CoACan speaker intercept Whisper baseline sex p >= .05: 1.0000 (paper 1.0)
+ok   CoACan speaker intercept Whisper LoRA sex p >= .05: 1.0000 (paper 1.0)
+ok   CoACan speaker intercept Qwen3 LoRA sex p >= .05: 1.0000 (paper 1.0)
+ok   CoACan speaker intercept min age p >= .05: 1.0000 (paper 1.0)
+
+0 differences

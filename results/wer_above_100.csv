@@ -1,0 +1,13 @@
+sample,condition,n,above_100,share_pct,median_wer,max_wer
+COSER,Whisper baseline,1494,19,1.27,29.0,6450.0
+COSER,Qwen3 baseline,1494,13,0.87,28.6,950.0
+COSER,Whisper LoRA,1494,52,3.48,21.5,4500.0
+COSER,Qwen3 LoRA,1494,11,0.74,23.5,800.0
+CoACan (256 individual),Whisper baseline,256,1,0.39,8.3,200.0
+CoACan (256 individual),Qwen3 baseline,256,0,0.0,7.1,100.0
+CoACan (256 individual),Whisper LoRA,256,1,0.39,4.9,200.0
+CoACan (256 individual),Qwen3 LoRA,256,1,0.39,5.6,200.0
+"CoACan (704, full test split)",Whisper baseline,704,1,0.14,7.5,200.0
+"CoACan (704, full test split)",Qwen3 baseline,704,2,0.28,8.0,133.0
+"CoACan (704, full test split)",Whisper LoRA,704,3,0.43,3.6,200.0
+"CoACan (704, full test split)",Qwen3 LoRA,704,4,0.57,5.6,200.0

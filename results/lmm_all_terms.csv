@@ -1,0 +1,53 @@
+corpus,condition,term,b,se,p
+COSER,Whisper baseline,Intercept,33.0692,2.0562,0.0
+COSER,Whisper baseline,"C(sex, Treatment('Female'))[T.Male]",6.3215,3.1493,0.0447
+COSER,Whisper baseline,age_c,0.0468,0.1553,0.7631
+COSER,Whisper baseline,z_nisqa,-2.0432,1.6249,0.2086
+COSER,Whisper baseline,z_dur,-3.0998,0.4451,0.0
+COSER,Whisper baseline,z_rate,-2.6052,0.4924,0.0
+COSER,Qwen3 baseline,Intercept,31.7315,1.7611,0.0
+COSER,Qwen3 baseline,"C(sex, Treatment('Female'))[T.Male]",6.3726,2.711,0.0187
+COSER,Qwen3 baseline,age_c,0.0656,0.1332,0.6224
+COSER,Qwen3 baseline,z_nisqa,-2.6087,1.3907,0.0607
+COSER,Qwen3 baseline,z_dur,-2.4281,0.4211,0.0
+COSER,Qwen3 baseline,z_rate,-2.538,0.465,0.0
+COSER,Whisper LoRA,Intercept,28.4334,2.0259,0.0
+COSER,Whisper LoRA,"C(sex, Treatment('Female'))[T.Male]",2.9153,3.1219,0.3504
+COSER,Whisper LoRA,age_c,0.1039,0.1521,0.4945
+COSER,Whisper LoRA,z_nisqa,-3.0486,1.5851,0.0545
+COSER,Whisper LoRA,z_dur,-1.7938,0.5263,0.0007
+COSER,Whisper LoRA,z_rate,-2.7118,0.5815,0.0
+COSER,Qwen3 LoRA,Intercept,31.3834,2.3943,0.0
+COSER,Qwen3 LoRA,"C(sex, Treatment('Female'))[T.Male]",6.877,3.6966,0.0628
+COSER,Qwen3 LoRA,age_c,0.0801,0.1809,0.658
+COSER,Qwen3 LoRA,z_nisqa,-1.5625,1.8811,0.4062
+COSER,Qwen3 LoRA,z_dur,-0.6868,0.6537,0.2935
+COSER,Qwen3 LoRA,z_rate,0.0888,0.7191,0.9018
+CoACan,Whisper baseline,Intercept,10.1875,1.0809,0.0
+CoACan,Whisper baseline,"C(sex, Treatment('Female'))[T.Male]",2.5392,1.7716,0.1518
+CoACan,Whisper baseline,"C(sex, Treatment('Female'))[T.Other]",-2.3855,13.2404,0.857
+CoACan,Whisper baseline,age_c,0.1271,0.1264,0.3144
+CoACan,Whisper baseline,z_nisqa,-2.0315,0.8575,0.0178
+CoACan,Whisper baseline,z_dur,-3.8438,1.0481,0.0002
+CoACan,Whisper baseline,z_rate,-2.2493,1.0322,0.0293
+CoACan,Qwen3 baseline,Intercept,9.2013,1.1773,0.0
+CoACan,Qwen3 baseline,"C(sex, Treatment('Female'))[T.Male]",5.0772,1.9337,0.0087
+CoACan,Qwen3 baseline,"C(sex, Treatment('Female'))[T.Other]",-2.078,14.5068,0.8861
+CoACan,Qwen3 baseline,age_c,0.1523,0.1384,0.2709
+CoACan,Qwen3 baseline,z_nisqa,-1.8138,0.9385,0.0533
+CoACan,Qwen3 baseline,z_dur,-6.1155,1.1619,0.0
+CoACan,Qwen3 baseline,z_rate,-2.544,1.1232,0.0235
+CoACan,Whisper LoRA,Intercept,6.7027,0.9431,0.0
+CoACan,Whisper LoRA,"C(sex, Treatment('Female'))[T.Male]",2.4092,1.5412,0.118
+CoACan,Whisper LoRA,"C(sex, Treatment('Female'))[T.Other]",-6.2443,11.7894,0.5964
+CoACan,Whisper LoRA,age_c,0.0431,0.112,0.7004
+CoACan,Whisper LoRA,z_nisqa,-1.8808,0.7504,0.0122
+CoACan,Whisper LoRA,z_dur,-4.7471,0.9452,0.0
+CoACan,Whisper LoRA,z_rate,-2.6592,0.9275,0.0041
+CoACan,Qwen3 LoRA,Intercept,7.9849,1.0516,0.0
+CoACan,Qwen3 LoRA,"C(sex, Treatment('Female'))[T.Male]",2.6583,1.7146,0.121
+CoACan,Qwen3 LoRA,"C(sex, Treatment('Female'))[T.Other]",-7.7385,13.116,0.5552
+CoACan,Qwen3 LoRA,age_c,0.1036,0.1245,0.4056
+CoACan,Qwen3 LoRA,z_nisqa,-1.6317,0.8366,0.0511
+CoACan,Qwen3 LoRA,z_dur,-4.4569,1.0371,0.0
+CoACan,Qwen3 LoRA,z_rate,-2.1989,1.0199,0.0311
